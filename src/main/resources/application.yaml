@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: ${APP_DB_URL:jdbc:postgresql://localhost:5433/user-db}
+    username: ${APP_DB_USER:myUser}
+    password: ${APP_DB_PASSWORD:myPassword}
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 100
+        order_inserts: true
+        order_updates: true
+        batch_versioned_data: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
